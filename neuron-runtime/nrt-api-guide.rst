@@ -1111,6 +1111,8 @@ Environment variables used to configure a model being loaded
 
     Same as ``nrt_load`` (same environment variables can be used to configure the model), but must be used when loading NEFFs containing Collective Communication operators. Uses the same arguments as `nrt_load`, but adds 2 extra ones.
 
+    Function is not thread-safe when invoked for the same ``start_nc``.
+
     :param neff_bytes: Pointer to existing NEFF file data
     :param size: Size of data in ``neff_bytes``
     :param start_nc: Index of NeuronCore on which to stage the model. If -1, an optimal index will be automatically determined (based on current NeuronCore usage).
